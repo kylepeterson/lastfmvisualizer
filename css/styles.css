@@ -1,0 +1,53 @@
+* {
+	margin: 0px;
+}
+
+html, body {
+	height: 100%;
+}
+
+.options-wrapper {
+	height: 20%;
+}
+
+.username {
+	width: 46%;
+	height: 100%;
+	padding: 0;
+	border: none;
+	float: left;
+	font-size: 4em;
+}
+
+.username:focus {
+    outline-width: 0;
+}
+
+.option {
+	width: 9%;
+	height: 100%;
+	padding: 0;
+	border: none;
+	float: left;
+	font-size: 2em;
+}
+
+.results {
+
+}
+
+.template {
+	
+}
+
+.artist {
+	width: 25%;
+	height: 0;
+	padding-top: 20%;
+	display: inline;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
