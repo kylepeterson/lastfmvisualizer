@@ -17,6 +17,7 @@ html, body {
 	border: none;
 	float: left;
 	font-size: 4em;
+	font-family: Helvetica;
 }
 
 .username:focus {
@@ -29,22 +30,34 @@ html, body {
 	padding: 0;
 	border: none;
 	float: left;
-	font-size: 2em;
+	font-size: 1.5em;
+	border-left: solid black 1px;
+	font-family: Helvetica;
 }
 
 .results {
-
+	font-family: Helvetica;
 }
 
 .template {
-	
+	display: hidden;
 }
 
 .artist {
 	width: 25%;
-	height: 0;
-	padding-top: 20%;
-	display: inline;
+	height: auto;
+	float: left;
+}
+
+.artist-name {
+	background: rgba(0, 0, 0, .5);
+	color: white;
+	font-size: 2em;
+}
+
+.selected {
+	background-color: black;
+	color: white;
 }
 
 input[type="search"]::-webkit-search-decoration,

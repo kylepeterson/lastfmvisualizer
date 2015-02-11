@@ -1,15 +1,24 @@
 $(function() {
+	$('.option').click(function() {
+		$('.option').removeClass("selected");
+		$(this).addClass("selected");
+		$(".results").empty();
+		getArtists($(".username").val());
+	});
 	$('.username').keypress(function (e) {
   		if (e.which == 13) {
+  			$(".results").empty();
   			var user = $('.username').val();
   			getArtists(user);
-    		return false;    //<---- Add this line
+    		return false;
   		}
 	});
 });
 
 function getArtists(user) {
-	$.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=" + user + "&api_key=109a93759c8a5b770fb2ac898f6d324a&limit=10&period=1month&format=json&callback=?", 
+	var period = $(".selected").attr("value");
+	console.log("chosen period: " + period);
+	$.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=" + user + "&api_key=109a93759c8a5b770fb2ac898f6d324a&limit=100&period=" + period + "&format=json&callback=?", 
 		function(json) {
 			console.log(json);
 			var artists = json.topartists.artist;
@@ -19,11 +28,17 @@ function getArtists(user) {
 				var url = artistInfo.url;
 				var pics = artistInfo.image;
 				var chosenPic = pics[4]["#text"];
-				console.log(chosenPic)
+				var chosenURL = "url('" + chosenPic + "')";
 				var playCount = artistInfo.playcount;
-				console.log(name + " " + playCount);
-				$(".artist-pic").attr("src", chosenPic);
-				$(".artist-name").text(name);
+				// Clone template and give proper contents
+				var temp = $(".template").clone();
+				temp.height($(".template").width());
+				temp.css("background-image", chosenURL);
+				temp.find(".artist-name").text((i + 1) + "// " + name + "// " + playCount + " plays");
+				temp.removeClass("template");
+				console.log(temp);
+				// Append template to results
+				$(".results").append(temp);
 			};
 		})
 }
