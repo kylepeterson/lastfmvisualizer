@@ -6,8 +6,13 @@ html, body {
 	height: 100%;
 }
 
+body {
+		font-family: 'Zapfino', Helvetica;
+
+}
+
 .options-wrapper {
-	height: 20%;
+	height: 18%;
 }
 
 .username {
@@ -16,8 +21,11 @@ html, body {
 	padding: 0;
 	border: none;
 	float: left;
-	font-size: 4em;
-	font-family: Helvetica;
+	font-size: 3em;
+	background-color: #333333;
+	color:#fff;
+	font-family: 'Lucida Grande', Helvetica;
+	padding-left: .2em;
 }
 
 .username:focus {
@@ -31,12 +39,25 @@ html, body {
 	border: none;
 	float: left;
 	font-size: 1.5em;
-	border-left: solid black 1px;
-	font-family: Helvetica;
+	font-family: 'Lucida Grande', Helvetica;
+	background-color: #e31b23;
+	background-image: -webkit-linear-gradient(#e31b23, #b32024);
+	color:white;
+	text-shadow: rgba(0,0,0,0.1) 0 1px 1px
+
 }
 
 .results {
-	font-family: Helvetica;
+	height: 100%;
+
+}
+
+.initial-view {
+	text-align: center;
+	font-size: 3em;
+	padding-top: 1em;
+	font-family: 'Lucida Grande', Helvetica;
+
 }
 
 .template {
@@ -45,7 +66,7 @@ html, body {
 
 .artist {
 	width: 25%;
-	height: auto;
+	height: 319px;
 	float: left;
 }
 
@@ -53,11 +74,17 @@ html, body {
 	background: rgba(0, 0, 0, .5);
 	color: white;
 	font-size: 2em;
+	font-family: 'Lucida Grande', Helvetica;
+
 }
 
 .selected {
-	background-color: black;
+	background-image: none;
+	background-color: #b32024;
 	color: white;
+	    outline-width: 0;
+
+	
 }
 
 input[type="search"]::-webkit-search-decoration,
